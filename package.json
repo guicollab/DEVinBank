@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "start:nodemon": "nodemon src/server.js",
     "start:swagger": "node ./src/utils/swagger.js"
   },
   "keywords": [],
