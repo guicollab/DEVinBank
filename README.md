@@ -6,7 +6,7 @@ API financeira para gerenciar usuários e suas respectivas despesas pessoais.
 
 ## 📜 Sobre o Projeto
 
-Desenvolvido no curso DEVinHouse 
+Desenvolvido no curso DEVinHouse
 
 ## 🚨 Requerido
 
@@ -68,8 +68,6 @@ npm start
 
 ## 📜 Documentação dos Endpoint's via Swagger
 
-  Para acessar as especificações dos endpoint acesse o endereço: http://localhost:3333/api-docs 
+Para acessar as especificações dos endpoint acesse o endereço: https://limitless-escarpment-52398.herokuapp.com/api-docs/
 
-
-
-
+<img src='' alt='Documentação da API'>
