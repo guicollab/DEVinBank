@@ -70,4 +70,4 @@ npm start
 
 Para acessar as especificações dos endpoint acesse o endereço: https://limitless-escarpment-52398.herokuapp.com/api-docs/
 
-<img src='' alt='Documentação da API'>
+<img src='https://github.com/guicollab/DEVinBank/blob/main/images/doc-swagger.png' alt='Documentação da API'>
