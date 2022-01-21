@@ -1,5 +1,7 @@
 [
-  { "id": 1, "name": "Detona", "email": "detona@ralph.com.br" },
+  { "id": 1, "name": "Asterix", "email": "asterix@obelix.com.br" },
   { "id": 2, "name": "Maria do Carmo", "email": "maria@carmo.com.br" },
-  { "id": 3, "name": "Mario Bros", "email": "mario@bros.com.br" }
+  { "id": 3, "name": "Mario Bros", "email": "mario@bros.com.br" },
+  { "id": 4, "name": "Solid Snake", "email": "solid@snake.com.br" },
+  { "id": 5, "name": "Metroman", "email": "metroman@metrocity.com" }
 ]

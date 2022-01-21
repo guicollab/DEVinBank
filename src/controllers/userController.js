@@ -38,12 +38,19 @@ module.exports = {
       }
     }
     */
-    const { name, email } = req.body;
+    const { name, email, ...fields } = req.body;
+    console.log(fields);
     const existKeyValue = Object.keys(req.body).filter(
       (item) => !req.body[item] || typeof req.body[item] !== "string"
     );
 
     const translateWords = existKeyValue.map((item) => translate[item]);
+
+    if (Object.keys(fields).length > 0) {
+      return res.status(400).send({
+        message: `Preencha apenas o(s) seguinte(s) campo(s): nome, email`,
+      });
+    }
 
     if (existKeyValue.length >= 1) {
       return res.status(400).send({
@@ -68,7 +75,7 @@ module.exports = {
   async updateUser(req, res) {
     /*
     #swagger.tags = ['Users']
-    #swagger.description = 'Editar/Atualizar os dados de um usuário específico (ID)'
+    #swagger.description = 'Editar/Atualizar os dados de um usuário específico'
     #swagger.parameters['parameterName'] = {
       in: 'body',
       required: true,

@@ -2,10 +2,10 @@
   "swagger": "2.0",
   "info": {
     "title": "DEVinBank Pagamentos S.A - API Conta365",
-    "description": "API para gerenciar gastos pessoais",
+    "description": "API para gerenciar despesas pessoais",
     "version": "1.0.0"
   },
-  "host": "localhost:3333",
+  "host": "limitless-escarpment-52398.herokuapp.com/api-docs",
   "basePath": "/",
   "schemes": [
     "http"
@@ -52,7 +52,7 @@
         "tags": [
           "Users"
         ],
-        "description": "Editar/Atualizar os dados de um usuário específico (ID)",
+        "description": "Editar/Atualizar os dados de um usuário específico",
         "parameters": [
           {
             "name": "id",
@@ -130,7 +130,7 @@
         "tags": [
           "Financial"
         ],
-        "description": "Endpoint que lista as despesas de todos os usuários",
+        "description": "Endpoint que lista as despesas dos usuários",
         "parameters": [],
         "responses": {
           "200": {
@@ -144,7 +144,7 @@
         "tags": [
           "Financial"
         ],
-        "description": "Endpoint que lista as despesas por ano/mês de um usuário específico (ID)",
+        "description": "Endpoint que lista as despesas por ano/mês de um usuário específico",
         "parameters": [
           {
             "name": "userID",
@@ -187,7 +187,7 @@
             "in": "formData",
             "type": "file",
             "required": true,
-            "description": "Some description...",
+            "description": "Carregue um arquivo Excel (.xslx) com as despesas do usuário.",
             "accept": "/"
           }
         ],
@@ -206,7 +206,7 @@
         "tags": [
           "Financial"
         ],
-        "description": "Endpoint que remove de um determinado usuário (ID) uma despesa específica (ID)",
+        "description": "Endpoint que remove despesas de um usuário específico",
         "parameters": [
           {
             "name": "userID",

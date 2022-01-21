@@ -6,7 +6,7 @@ module.exports = {
   async getFinancial(req, res) {
     /*
     #swagger.tags = ['Financial']
-    #swagger.description = 'Endpoint que lista as despesas de todos os usuários'
+    #swagger.description = 'Endpoint que lista as despesas dos usuários'
     */
     const financial = getData("src/database", "financial.json");
     return res.status(200).json({ message: financial });
@@ -15,7 +15,7 @@ module.exports = {
   async getFinancialID(req, res) {
     /*
     #swagger.tags = ['Financial']
-    #swagger.description = 'Endpoint que lista as despesas por ano/mês de um usuário específico (ID)'
+    #swagger.description = 'Endpoint que lista as despesas por ano/mês de um usuário específico'
     */
     const { userID } = req.params;
     const { typesOfExpenses } = req.query;
@@ -69,7 +69,7 @@ module.exports = {
         in: 'formData',
         type: 'file',
         required: 'true',
-        description: 'Some description...',
+        description: 'Carregue um arquivo Excel (.xslx) com as despesas do usuário.',
         accept: '/',
     }
     */
@@ -77,6 +77,7 @@ module.exports = {
     // check user exists
     const users = getData("src/database", "users.json");
     const findUser = users.find((user) => user.id === Number(userID));
+    console.log(findUser);
 
     if (!findUser) {
       return res.status(400).json({ message: "Usuário indisponível" });
@@ -98,44 +99,27 @@ module.exports = {
     if (!checkKeys || firstRow.length !== 4) {
       res.status(400).json({
         message:
-          "O nome dos campos estão incorretos. Verifique e tente novamente.",
+          "O nome dos campos estão incorretos. Verifique se o nome das colunas correspondem (price, typesOfExpenses, date, description) e tente novamente.",
       });
     }
 
-    // check expenses user
     const financial = getData("src/database", "financial.json");
-    const findUserID = financial.find((user) => user.id === Number(userID));
+    const findUserID = financial.find((user) => user.userID === Number(userID));
+    console.log(findUserID);
 
     const filterRows = rows.filter((_, index) => index !== 0);
 
-    if (!findUserID) {
+    if (findUser && !findUserID) {
       financial.push({
         id: financial.length + 1,
         userID: Number(userID),
         financialData: [],
       });
-
-      filterRows.map((row) => {
-        const result = row.map((cell, index) => {
-          if (index === 2) {
-            const num = cell;
-            cell = XlsxPopulate.numberToDate(num);
-          }
-          return {
-            [firstRow[index]]: cell,
-          };
-        });
-        // object excel data
-        const findUserID = financial.find((user) => user.id === Number(userID));
-        const financialItems = Object.assign(
-          {},
-          { id: findUserID.financialData.length + 1 },
-          ...result
-        );
-
-        findUserID.financialData.push(financialItems);
-      });
     }
+
+    const _findUserID = financial.find(
+      (user) => user.userID === Number(userID)
+    );
 
     filterRows.map((row) => {
       const result = row.map((cell, index) => {
@@ -147,13 +131,14 @@ module.exports = {
           [firstRow[index]]: cell,
         };
       });
-      // object excel data
+
       const financialItems = Object.assign(
         {},
-        { id: findUserID.financialData.length + 1 },
+        { id: _findUserID.financialData.length + 1 },
         ...result
       );
-      findUserID.financialData.push(financialItems);
+
+      _findUserID.financialData.push(financialItems);
     });
 
     createOrUpdateData("src/database/financial.json", financial);
@@ -163,7 +148,7 @@ module.exports = {
   async deleteFinancialUser(req, res) {
     /*
     #swagger.tags = ['Financial']
-    #swagger.description = 'Endpoint que remove de um determinado usuário (ID) uma despesa específica (ID)'
+    #swagger.description = 'Endpoint que remove despesas de um usuário específico'
     */
     const { userID, financialID } = req.params;
 
