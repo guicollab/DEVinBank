@@ -1,19 +1,19 @@
 # Projeto CONTA365 - Nodejs Expressjs API
 
-[![Author]()](https://github.com/guicollab) 
+[![Author](https://img.shields.io/badge/autor-%40guicollab-blue.svg)](https://github.com/guicollab)
 
 API financeira para gerenciar usuários e suas respectivas despesas pessoais.
 
-## Sobre o Projeto
+## 📜 Sobre o Projeto
 
 Desenvolvido no curso DEVinHouse 
 
-## Requerido
+## 🚨 Requerido
 
 - Node.js
 - Express
 
-## Como Utilizar
+## 📜 Como Utilizar
 
 ### Usando Git
 
@@ -42,14 +42,7 @@ npm install
 npm start
 ```
 
-Acesse a URL: http://localhost:3333
-
-- Documentação dos Endpoint's via Swagger
-
-  Para acessar as especificações dos endpoint acesse o endereço: http://localhost:3333/api-docs 
-
-
-## Estrutura do Projeto
+## 🗂️ Estrutura do Projeto
 
 ```sh
 .
@@ -65,7 +58,6 @@ Acesse a URL: http://localhost:3333
 │           ├── financial.routes.js
 │           └── user.routes.js
 │       └── index.js
-│   └── services
 │   └── utils
 │       ├── constants.js
 │       └── functions.js
@@ -73,4 +65,11 @@ Acesse a URL: http://localhost:3333
 │   ├── server.js
 │   ├── swagger_output.json
 ```
+
+## 📜 Documentação dos Endpoint's via Swagger
+
+  Para acessar as especificações dos endpoint acesse o endereço: http://localhost:3333/api-docs 
+
+
+
 
