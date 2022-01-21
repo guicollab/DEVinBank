@@ -68,6 +68,6 @@ npm start
 
 ## 📜 Documentação dos Endpoint's via Swagger
 
-Para acessar as especificações dos endpoint acesse o endereço: https://limitless-escarpment-52398.herokuapp.com/api-docs/
+Para acessar as especificações dos endpoint acesse o endereço: <a target='_blank' href='https://limitless-escarpment-52398.herokuapp.com/api-docs/'>API Conta365</a>
 
-<img target='_blank' src='https://github.com/guicollab/DEVinBank/blob/main/images/doc-swagger.png' alt='Documentação da API'>
+<img src='https://github.com/guicollab/DEVinBank/blob/main/images/doc-swagger.png' alt='Documentação da API'>
