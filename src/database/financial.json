@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "userID": 1,
+    "financialData": []
+  },
+  {
+    "id": 2,
+    "userID": 2,
+    "financialData": []
+  },
+  {
+    "id": 3,
+    "userID": 3,
+    "financialData": []
+  }
+]
