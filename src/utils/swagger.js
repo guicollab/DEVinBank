@@ -9,7 +9,8 @@ const doc = {
     description: "API para gerenciar despesas pessoais",
     version: "1.0.0",
   },
-  host: "limitless-escarpment-52398.herokuapp.com/api-docs",
+  host: "devinbank-api.herokuapp.com" || "localhost:3333",
+  schemes: ["https", "http"],
 };
 
 swaggerAutogen(outputFile, endpointsFiles, doc);
