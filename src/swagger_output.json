@@ -5,9 +5,10 @@
     "description": "API para gerenciar despesas pessoais",
     "version": "1.0.0"
   },
-  "host": "localhost:3333",
+  "host": "devinbank-api.herokuapp.com",
   "basePath": "/",
   "schemes": [
+    "https",
     "http"
   ],
   "paths": {
