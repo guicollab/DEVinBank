@@ -10,7 +10,7 @@ const doc = {
     version: "1.0.0",
   },
   host: "devinbank-api.herokuapp.com" || "localhost:3333",
-  schemes: ["https", "http"],
+  schemes: -https - http,
 };
 
 swaggerAutogen(outputFile, endpointsFiles, doc);

@@ -80,6 +80,7 @@ module.exports = {
       in: 'body',
       required: true,
       schema: {
+        id: '1',
         name: 'Zé Colméia',
         email: 'ze@colmeia.com.br'
       }
@@ -100,7 +101,7 @@ module.exports = {
 
     if (existKeyValue.length >= 1) {
       return res.status(400).send({
-        message: `Você não tem permissão para cadastrar o(s) campo(s): ${existKeyValue.join(
+        message: `Você não tem permissão para atualizar o(s) campo(s): ${existKeyValue.join(
           ", "
         )}`,
       });

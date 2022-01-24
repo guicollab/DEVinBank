@@ -1,12 +1,1 @@
-[
-  {
-    "id": 1,
-    "userID": 1,
-    "financialData": []
-  },
-  {
-    "id": 2,
-    "userID": 2,
-    "financialData": []
-  }
-]
+[{"id":1,"userID":1,"financialData":[]},{"id":2,"userID":2,"financialData":[]},{"id":3,"userID":5,"financialData":[{"id":1,"price":799.99,"typesOfExpenses":"mercado","date":"2022-01-05T03:00:00.000Z","description":"compras do mês"},{"id":2,"price":25.75,"typesOfExpenses":"gasolina","date":"2022-01-10T03:00:00.000Z","description":"posto de combustível"},{"id":3,"price":132.15,"typesOfExpenses":"restaurante","date":"2022-01-18T03:00:00.000Z","description":"happy hour"}]}]

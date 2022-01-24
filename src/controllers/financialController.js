@@ -21,7 +21,9 @@ module.exports = {
     const { typesOfExpenses } = req.query;
 
     const financial = getData("src/database", "financial.json");
-    const financialUser = financial.find((item) => item.id === Number(userID));
+    const financialUser = financial.find(
+      (item) => item.userID === Number(userID)
+    );
 
     if (!financialUser) {
       return res.status(400).json({ message: "Usuário indisponível." });
